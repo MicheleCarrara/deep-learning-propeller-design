@@ -47,7 +47,7 @@ Output layer neurons:
 Total of 46 neurons
 
 The network is composed of 3 hidden layers of 512, 256 and 128 neurons respectively
-'''
+```
 model = keras.Sequential([
     layers.Input(shape=(8,)),
     layers.Dense(256, activation="relu"),
@@ -55,17 +55,17 @@ model = keras.Sequential([
     layers.Dense(64, activation="relu"),     
     layers.Dense(46, activation="linear")
 ])
-'''
+```
 The *loss function* used is the Mean Squared Error (mse):
 \begin{equation}
     MSE=\sum_i^N \frac{(y_{pred}-y_{true})^2}{N}
 \end{equation}
 Where $y_pred$ represents the geometry output predicted by the neural network and $y_true$ represents the real geometry given from apc data.
-'''
+```
 model.compile(
     optimizer=keras.optimizers.Adam(learning_rate=1e-3),
     loss="mse")
-'''
+```
 <img width="1176" height="718" alt="Screenshot 2026-07-18 110640" src="https://github.com/user-attachments/assets/1cbecd6e-dcde-42df-a1c6-a07eaf7832b2" />
 
 ## Results
