@@ -3,9 +3,14 @@
 _Master Thesis Project.
 Mechanical Engineering, Università degli Studi di Bergamo_
 
+## Table of contents
+- [Overview](#overview)
+- [Neural Network Architerature](#neural-network-architerature)
+- [Results](#results)
+
+## Overview
 This project aims to reconstruct propeller geometries starting from the desired aerodynamics performance data using a Data-Driven Deep Neural Network.
-Traditional propeller design requires multiple iterations
-between geometry generation and aerodynamic evaluation.
+Traditional propeller design requires multiple iterations between geometry generation and aerodynamic evaluation.
 
 This project investigates whether a deep neural network can
 directly infer propeller geometry from desired performance targets.
@@ -14,6 +19,8 @@ directly infer propeller geometry from desired performance targets.
 
 The training data is taken from apcprop.com, wich contains about 500 hundred different helics used for radio-controlled modellings and the corresponding aerodynamic performance coefficients like thrust, power and torque.
 The network was built in Python using Keras API of TensorFlow library:
+
+## Neural Network Architerature
 
 Input layer neurons:
 - Cruise velocity
@@ -39,9 +46,22 @@ Output layer neurons:
 
 Total of 46 neurons
 
+The network is composed of 3 hidden layers of 512, 256 and 128 neurons respectively
+model = keras.Sequential([
+    layers.Input(shape=(8,)),
+    layers.Dense(256, activation="relu"),
+    layers.Dense(128, activation="relu"),
+    layers.Dense(64, activation="relu"),     
+    layers.Dense(46, activation="linear")
+])
+
+
 The loss *function* used is the Mean Squared Error (MSE)
 
 <img width="1176" height="718" alt="Screenshot 2026-07-18 110640" src="https://github.com/user-attachments/assets/1cbecd6e-dcde-42df-a1c6-a07eaf7832b2" />
+
+## Results
+
 
 The output of the net was verified with CFD (Star-CCM+), as well as a low fidelity model (XROTOR).
 
