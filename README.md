@@ -1,2 +1,7 @@
 # Deep-Learning-propeller-design
-A deep neural network framework for inverse propeller design.  Given target aerodynamic performance metrics, the model predicts the corresponding propeller geometry, reducing design iteration time compared to conventional approaches.
+
+This project aims to reconstruct propeller geometries starting from the desired aerodynamics performance data using a Data-Driven Deep Neural Network.
+This is a *Reverse Engineering* model able to reduce iteration time compared to conventional approchaes.
+
+
+<img width="712" height="366" alt="image" src="https://github.com/user-attachments/assets/d6bfab73-3b16-443a-88ac-6e677a885cd9" />
