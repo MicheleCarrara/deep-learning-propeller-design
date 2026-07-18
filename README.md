@@ -1,6 +1,6 @@
 # Deep-Learning-propeller-design
 
-_Master Thesis Project
+_Master Thesis Project.
 Mechanical Engineering, Università degli Studi di Bergamo_
 
 This project aims to reconstruct propeller geometries starting from the desired aerodynamics performance data using a Data-Driven Deep Neural Network.
